@@ -6,8 +6,89 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .app {
   min-height: 100vh;
   display: grid;
-  background: #e2d4ff;
+  place-items: center;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  transition: background 0.5s ease;
+}
+
+/* Weather component style refinements */
+.weather {
+  padding: 50px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.weather:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+}
+
+.search-bar input {
+  color: #333;
+  background: #fff;
+}
+
+.search-bar img {
+  background: #fff;
+}
+
+.temperature {
+  font-size: 85px;
+  color: #fff;
+}
+
+.location {
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+}
+
+.weather_data .col span {
+  color: #ddd;
+}
+
+/* Background gradient animation */
+.app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Keyframes for gradient background animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -7,7 +7,7 @@ import wind_icon from "../assets/wind.png";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState("Multan");
+  const [city, setCity] = useState("");
 
   const search = async (city) => {
     try {
